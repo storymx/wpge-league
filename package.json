@@ -1,0 +1,19 @@
+{
+  "name": "wpge-league",
+  "version": "1.0.0",
+  "description": "eSports site that brings ther best statistics, news, and activities for multiple competitions and games for the public.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eSports",
+    "competitive",
+    "statistics",
+    "news",
+    "rankings"
+  ],
+  "author": "Luis Gabriel Jaramillo Perez",
+  "license": "ISC"
+}
