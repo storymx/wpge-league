@@ -10,6 +10,8 @@ const keys = require('./server/keys/keys.js');
 
 //app start
 const app = express();
+const router = express.Router();
+
 
 //Database Connection
 mongoose.connect(keys.mongodbAtlas.url, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -37,19 +39,15 @@ app.use('/replays', express.static('./replays'))
     // .use('/api', apiRoutes)
 //CONFIG PRODUCTION O DEV
 if (process.env.NODE_ENV === 'production'){ //Necesita ir antes del ultimo app.use con el next
-    //Folder statico
+    //Folder static
     console.log(process.env.NODE_ENV);
     app.use(express.static(__dirname + '/public/'));
     //Manejar SinglePageApplication
     app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html')); //Redirecciona  index.js
 }
-app.use((req, res, next) => {
-});
-
 
 //SERVER APPLICATION
 const server = app.listen(process.env.PORT || 3000, () =>{
     const port = server.address().port;
     console.log('WPGE-League Application up and running in PORT: ', port);
 });
-
